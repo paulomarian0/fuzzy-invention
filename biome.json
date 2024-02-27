@@ -9,7 +9,14 @@
 			"recommended": true,
 			"style": {
 				"noNonNullAssertion": "off"
+			},
+			"correctness": {
+				"useExhaustiveDependencies": "off"
 			}
 		}
+	},
+	"formatter": {
+		"enabled": true,
+		"lineWidth": 120
 	}
 }
