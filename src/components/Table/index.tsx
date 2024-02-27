@@ -1,8 +1,9 @@
 import { Grid, GridColumn, GridPageChangeEvent } from "@progress/kendo-react-grid";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { PagerTargetEvent } from "@progress/kendo-react-data-tools";
 import { IProduct } from "../../hooks/useListProducts";
+import { LoadingPanel } from "../LoadingPanel";
 
 interface PageState {
 	skip: number;
@@ -11,11 +12,12 @@ interface PageState {
 interface ITableProps {
 	products?: IProduct[];
 	total?: number;
+	isLoading?: boolean;
 }
 
 const initialDataState: PageState = { skip: 0, take: 10 };
 
-const Table = ({ products, total }: ITableProps) => {
+const Table = ({ products, total, isLoading }: ITableProps) => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const [page, setPage] = useState<PageState>(initialDataState);
 	const [pageSizeValue, setPageSizeValue] = useState<number | string | undefined>();
@@ -49,24 +51,27 @@ const Table = ({ products, total }: ITableProps) => {
 	}, [searchParams]);
 
 	return (
-		<Grid
-			data={products}
-			skip={page.skip}
-			take={page.take}
-			total={total}
-			pageable={{
-				pageSizes: [5, 10, 15],
-				pageSizeValue: pageSizeValue,
-			}}
-			onPageChange={pageChange}
-		>
-			<GridColumn field="id" title="ID" width="50px" />
-			<GridColumn field="title" title="Title" width="300px" />
-			<GridColumn field="brand" title="Brand" width="250px" />
-			<GridColumn field="category" title="Category" />
-			<GridColumn field="price" title="Price" />
-			<GridColumn field="rating" title="Rating" />
-		</Grid>
+		<div>
+			{isLoading && <LoadingPanel />}
+			<Grid
+				data={products}
+				skip={page.skip}
+				take={page.take}
+				total={total}
+				pageable={{
+					pageSizes: [5, 10, 15],
+					pageSizeValue: pageSizeValue,
+				}}
+				onPageChange={pageChange}
+			>
+				<GridColumn field="id" title="ID" width="50px" />
+				<GridColumn field="title" title="Title" width="300px" />
+				<GridColumn field="brand" title="Brand" width="250px" />
+				<GridColumn field="category" title="Category" />
+				<GridColumn field="price" title="Price" />
+				<GridColumn field="rating" title="Rating" />
+			</Grid>
+		</div>
 	);
 };
 
