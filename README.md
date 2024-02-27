@@ -40,4 +40,3 @@ A aplicação também está disponível para visualização no seguinte link:
 
 [https://fuzzy-invention-two.vercel.app](https://fuzzy-invention-two.vercel.app)
 
-Certifique-se de ter configurado corretamente as variáveis de ambiente tanto para o ambiente de desenvolvimento quanto para o de produção.
