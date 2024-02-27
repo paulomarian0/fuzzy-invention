@@ -101,11 +101,11 @@ const Table = ({ products, total, isLoading }: ITableProps) => {
 					</div>
 				</GridToolbar>
 				<GridColumn field="id" title="ID" width="50px" />
-				<GridColumn field="title" title="Title" width="300px" />
-				<GridColumn field="brand" title="Brand" width="250px" />
+				<GridColumn field="title" title="Title" />
+				<GridColumn field="brand" title="Brand" />
 				<GridColumn field="category" title="Category" />
 				<GridColumn field="price" title="Price" />
-				<GridColumn field="rating" title="Rating" />
+				<GridColumn field="rating" title="Rating" width="80%" />
 			</Grid>
 		</div>
 	);
