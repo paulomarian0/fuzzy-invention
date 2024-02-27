@@ -1,30 +1,43 @@
-# React + TypeScript + Vite
+# Fuzzy Invention
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bem-vindo ao projeto Fuzzy Invention! Este é um breve guia para começar a trabalhar com o código. Certifique-se de seguir estas etapas para configurar o ambiente de desenvolvimento corretamente.
 
-Currently, two official plugins are available:
+## Clonando o Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Clone este repositório em sua máquina local:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```
+$ git clone https://github.com/paulomarian0/fuzzy-invention.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+## Instalação de Dependências
+
+Após clonar o repositório, navegue até o diretório do projeto e execute o seguinte comando para instalar as dependências necessárias:
+
+```
+npm install
+```
+
+## Configuração do Arquivo .env
+
+É necessário criar um arquivo `.env` na raiz do projeto e colar o conteúdo do arquivo `.env.example`. Certifique-se de preencher todas as variáveis de ambiente necessárias. Este passo é crucial para o funcionamento adequado do programa, pois há validações que impedem a execução sem todas as variáveis configuradas.
+
+## Executando Localmente
+
+Após configurar o arquivo `.env`, você pode iniciar o servidor localmente executando o seguinte comando:
+
+```
+npm run dev
+```
+
+
+Isso iniciará o servidor local e você poderá acessar a aplicação em `http://localhost:3000`.
+
+## Deploy
+
+A aplicação também está disponível para visualização no seguinte link:
+
+[https://fuzzy-invention-two.vercel.app](https://fuzzy-invention-two.vercel.app)
+
+Certifique-se de ter configurado corretamente as variáveis de ambiente tanto para o ambiente de desenvolvimento quanto para o de produção.
