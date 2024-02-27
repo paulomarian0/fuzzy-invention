@@ -22,13 +22,8 @@ interface IProductResponse {
 	limit: number;
 }
 
-const getAllProducts = async (
-	skip: number,
-	take: number,
-): Promise<IProductResponse> => {
-	const response = await fetch(
-		`https://dummyjson.com/products?limit=${take}&skip=${skip}`,
-	);
+const getAllProducts = async (skip: number, take: number, search: string): Promise<IProductResponse> => {
+	const response = await fetch(`https://dummyjson.com/products/search?q=${search}&limit=${take}&skip=${skip}`);
 	return response.json();
 };
 
@@ -37,10 +32,11 @@ export const useListProducts = () => {
 
 	const skip = Number(searchParams.get("skip"));
 	const take = Number(searchParams.get("take"));
+	const search = searchParams.get("filter") || "";
 
 	const query = useQuery<IProductResponse>({
-		queryKey: ["products", skip, take],
-		queryFn: () => getAllProducts(skip, take),
+		queryKey: ["products", skip, take, search],
+		queryFn: () => getAllProducts(skip, take, search),
 	});
 	return query;
 };
