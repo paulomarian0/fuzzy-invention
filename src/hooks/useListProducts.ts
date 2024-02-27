@@ -1,5 +1,6 @@
 import { useQuery } from "react-query";
 import { useSearchParams } from "react-router-dom";
+import { env } from "../env";
 
 export interface IProduct {
 	id: number;
@@ -23,7 +24,7 @@ interface IProductResponse {
 }
 
 const getAllProducts = async (skip: number, take: number, search: string): Promise<IProductResponse> => {
-	const response = await fetch(`https://dummyjson.com/products/search?q=${search}&limit=${take}&skip=${skip}`);
+	const response = await fetch(`${env.VITE_API_URL}/search?q=${search}&limit=${take}&skip=${skip}`);
 	return response.json();
 };
 
