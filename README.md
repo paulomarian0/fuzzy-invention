@@ -31,8 +31,7 @@ Após configurar o arquivo `.env`, você pode iniciar o servidor localmente exec
 npm run dev
 ```
 
-
-Isso iniciará o servidor local e você poderá acessar a aplicação em `http://localhost:3000`.
+Isso iniciará o servidor local e você poderá acessar a aplicação em `http://localhost:5173`.
 
 ## Deploy
 
