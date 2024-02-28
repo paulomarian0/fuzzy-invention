@@ -9,7 +9,7 @@ Clone este repositório em sua máquina local:
 ```
 $ git clone https://github.com/paulomarian0/fuzzy-invention.git
 ```
-Agora, entre na pasta do projeto
+Depois de realizar o clone, entre na pasta do projeto
 
 ## Instalação de Dependências
 
