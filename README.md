@@ -33,6 +33,14 @@ npm run dev
 
 Isso iniciará o servidor local e você poderá acessar a aplicação em `http://localhost:5173`.
 
+## Testes
+
+Para executar os testes, utilize o seguinte comando:
+
+```
+npm run test
+```
+
 ## Deploy
 
 A aplicação também está disponível para visualização no seguinte link:
